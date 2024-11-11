@@ -12,8 +12,8 @@ type RouteHandler = (
 ) => Promise<void> | void;
 
 router.post('/hotel', createHotel as RouteHandler);
-router.get('/hotel/:hotelId', getHotel as RouteHandler);
-router.put('/hotel/:hotelId', updateHotel as RouteHandler);
+router.get('/hotel/:id', getHotel as RouteHandler);
+router.put('/hotel/:id', updateHotel as RouteHandler);
 router.post('/images/:hotelId', upload.array('images', 5), uploadImages as RouteHandler);
 
 export const hotelRoutes = router;

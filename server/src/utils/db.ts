@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { Hotel } from '../types/hotel';
 
-const DB_PATH = path.join(process.cwd(), 'data', 'hotels.json');
+const DB_PATH = path.join(process.cwd(), 'data', 'hotel-id.json');
 
 export async function ensureDbExists() {
   try {
