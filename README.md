@@ -53,8 +53,8 @@ Example Request Body:
   ],
   "rooms": [
     {
-      "roomSlug": "ocean-view-suite",
       "roomTitle": "Ocean View Suite",
+      "roomImage": "https://example.com/images/room3.jpg",
       "bedroomCount": 1
     }
   ]
