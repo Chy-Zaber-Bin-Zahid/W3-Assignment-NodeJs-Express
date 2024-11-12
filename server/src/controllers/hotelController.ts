@@ -86,7 +86,6 @@ export const updateHotel = async (
 
     // Define allowed fields for updating
     const allowedFields = [
-      "slug",
       "title",
       "description",
       "images",
@@ -109,6 +108,77 @@ export const updateHotel = async (
       });
       return;
     }
+
+    // Define required fields for updating
+    const requiredFields = [
+      "title",
+      "description",
+      "images",
+      "guestCount",
+      "bedroomCount",
+      "bathroomCount",
+      "amenities",
+      "host",
+      "address",
+      "location",
+      "rooms"
+    ];
+
+    // Check if all required fields are present
+    const missingFields = requiredFields.filter(field => !(field in updateData));
+
+    if (missingFields.length > 0) {
+      res.status(400).json({
+        error: 'Missing required fields',
+        missingFields,
+      });
+      return;
+    }
+
+    // Validate nested objects
+    if (typeof updateData.host !== 'object' || 
+        !updateData.host.name || 
+        !updateData.host.email || 
+        !updateData.host.phone) {
+      res.status(400).json({
+        error: 'Invalid host data',
+      });
+      return;
+    }
+
+    if (typeof updateData.location !== 'object' || 
+        typeof updateData.location.latitude !== 'number' || 
+        typeof updateData.location.longitude !== 'number') {
+      res.status(400).json({
+        error: 'Invalid location data',
+      });
+      return;
+    }
+
+    if (!Array.isArray(updateData.rooms) || updateData.rooms.length === 0) {
+      res.status(400).json({
+        error: 'Invalid rooms data',
+      });
+      return;
+    }
+
+    // Validate room data
+    const invalidRooms = updateData.rooms.filter(room => 
+      !room.hotelSlug || 
+      !room.roomSlug || 
+      !room.roomImage || 
+      !room.roomTitle || 
+      typeof room.bedroomCount !== 'number'
+    );
+
+    if (invalidRooms.length > 0) {
+      res.status(400).json({
+        error: 'Invalid room data',
+        invalidRooms,
+      });
+      return;
+    }
+    
 
     const hotels = await readDb();
     const hotelIndex = hotels.findIndex(h => h.hotelId === Number(id));
@@ -140,12 +210,12 @@ export const updateHotel = async (
 
 // Upload Images
 export const uploadImages = async (
-  req: Request<{ hotelId: string }>,
+  req: Request<{ id: string }>,
   res: Response,
   next: NextFunction
 ): Promise<void> => {
   try {
-    const { hotelId } = req.params;
+    const { id } = req.params;
     const files = req.files as Express.Multer.File[];
     
     if (!files || files.length === 0) {
@@ -154,7 +224,7 @@ export const uploadImages = async (
     }
     
     const hotels = await readDb();
-    const hotelIndex = hotels.findIndex(h => h.id === hotelId || h.slug === hotelId);
+    const hotelIndex = hotels.findIndex(h => h.hotelId === Number(id));
     
     if (hotelIndex === -1) {
       res.status(404).json({ error: 'Hotel not found' });

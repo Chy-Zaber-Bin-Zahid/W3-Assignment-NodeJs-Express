@@ -101,31 +101,57 @@
   {
     "id": "cc9dafd1-c1b8-47a9-9f3d-3b1474991886",
     "hotelId": 3,
-    "slug": "mountain-view-inn",
-    "title": "Mountain View Inn",
-    "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
-    "guestCount": 50,
-    "bedroomCount": 25,
-    "bathroomCount": 25,
+    "slug": "luxury-beachside-resort-new",
+    "title": "Luxury Beachside Resort New",
+    "description": "A luxury resort with beautiful views of the ocean, offering top-notch amenities and services.",
+    "guestCount": 100,
+    "bedroomCount": 50,
+    "bathroomCount": 50,
     "amenities": [
-      "Free Parking",
+      "Free Wi-Fi",
+      "Swimming Pool",
+      "Gym",
+      "Spa",
       "Restaurant",
       "Bar",
-      "Pet Friendly"
+      "Room Service"
     ],
     "host": {
-      "name": "Jane Smith",
-      "email": "jane.smith@example.com",
-      "phone": "+0987654321"
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1234567890"
     },
-    "address": "456 Mountain Road, Aspen, Colorado",
+    "address": "123 Ocean Drive, Malibu, California",
     "location": {
-      "latitude": 39.1911,
-      "longitude": -106.8175
+      "latitude": 34.0259,
+      "longitude": -118.7798
     },
-    "images": [],
-    "rooms": [],
+    "images": [
+      "https://example.com/images/hotel1-1.jpg",
+      "https://example.com/images/hotel1-2.jpg",
+      "https://example.com/images/hotel1-3.jpg"
+    ],
+    "rooms": [
+      {
+        "hotelSlug": "hotel-one",
+        "roomSlug": "room-1",
+        "roomImage": "https://example.com/images/room1.jpg",
+        "roomTitle": "Ocean View Suite",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z"
+      },
+      {
+        "hotelSlug": "hotel-one",
+        "roomSlug": "room-2",
+        "roomImage": "https://example.com/images/room2.jpg",
+        "roomTitle": "Deluxe King Room",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z"
+      }
+    ],
     "createdAt": "2024-11-11T12:39:09.294Z",
-    "updatedAt": "2024-11-12T03:40:29.494Z"
+    "updatedAt": "2024-11-12T04:59:51.456Z"
   }
 ]
