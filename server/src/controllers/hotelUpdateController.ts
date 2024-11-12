@@ -3,7 +3,6 @@ import slugify from 'slugify';
 import { UpdateHotelDto } from '../types/hotel';
 import { readDb, writeDb } from '../utils/db';
 
-
 export const updateHotel = async (
   req: Request<{ id: string }, {}, UpdateHotelDto>,
   res: Response,
@@ -93,8 +92,6 @@ export const updateHotel = async (
 
     // Validate room data
     const invalidRooms = updateData.rooms.filter(room => 
-      !room.hotelSlug || 
-      !room.roomSlug || 
       !room.roomImage || 
       !room.roomTitle || 
       typeof room.bedroomCount !== 'number'
@@ -107,7 +104,6 @@ export const updateHotel = async (
       });
       return;
     }
-    
 
     const hotels = await readDb();
     const hotelIndex = hotels.findIndex(h => h.hotelId === Number(id));
@@ -117,18 +113,24 @@ export const updateHotel = async (
       return;
     }
 
-    // Update slug if title is being updated
-    const slug = updateData.title 
-      ? slugify(updateData.title, { lower: true, strict: true })
-      : hotels[hotelIndex].slug;
-    
+    // Generate new hotel slug
+    const hotelSlug = slugify(updateData.title || hotels[hotelIndex].title, { lower: true, strict: true });
+
+    // Generate new room slugs and add hotelSlug
+    const updatedRooms = updateData.rooms.map(room => ({
+      ...room,
+      hotelSlug,
+      roomSlug: slugify(room.roomTitle, { lower: true, strict: true })
+    }));
+
     hotels[hotelIndex] = {
       ...hotels[hotelIndex],
       ...updateData,
-      slug,
+      slug: hotelSlug,
+      rooms: updatedRooms,
       updatedAt: new Date().toISOString(),
     };
-    
+
     await writeDb(hotels);
     
     res.json(hotels[hotelIndex]);

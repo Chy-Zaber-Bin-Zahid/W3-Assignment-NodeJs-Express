@@ -47,6 +47,7 @@ export interface CreateHotelDto {
   address: string;
   location: Location;
   rooms: Room[];
+  images: string[];
 }
 
 export interface UpdateHotelDto extends Partial<CreateHotelDto> {}

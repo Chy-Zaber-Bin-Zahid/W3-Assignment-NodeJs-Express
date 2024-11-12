@@ -19,8 +19,26 @@ export const createHotel = async (
       }));
       
       // Validate required fields
-      if (!req.body.title || !req.body.description || !req.body.amenities || !req.body.bathroomCount || !req.body.bedroomCount || !req.body.guestCount || !req.body.host || !req.body.location || !req.body.address || !req.body.rooms) {
-        res.status(400).json({ error: 'Title, description, and other fields are required' });
+      const requiredFields: (keyof CreateHotelDto)[] = [
+        'title', 
+        'description', 
+        'amenities', 
+        'bathroomCount', 
+        'bedroomCount', 
+        'guestCount', 
+        'host', 
+        'location', 
+        'address', 
+        'rooms',
+        'images'
+      ];
+      
+      const missingFields = requiredFields.filter(field => !req.body[field]);
+
+      if (missingFields.length > 0) {
+        res.status(400).json({ 
+          error: `The following fields are required: ${missingFields.join(', ')}` 
+        });
         return;
       }
   
@@ -39,9 +57,8 @@ export const createHotel = async (
         id: uuidv4(),
         hotelId: nextHotelId,
         slug,
-        rooms: roomsWithSlugs,
         ...newHotelData,
-        images: [],
+        rooms: roomsWithSlugs,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       };

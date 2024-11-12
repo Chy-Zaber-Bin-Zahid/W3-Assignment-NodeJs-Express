@@ -39,7 +39,11 @@ describe('createHotel', () => {
       host: 'Test Host',
       location: 'Test Location',
       address: 'Test Address',
-      rooms: ['Room 1', 'Room 2'],
+      images: ["/uploads/image.png"],
+      rooms: [
+        { roomTitle: 'Deluxe Room', bedroomCount: 1 },
+        { roomTitle: 'Suite', bedroomCount: 2 }
+      ],
     };
 
     await createHotel(mockRequest as Request, mockResponse as Response, nextFunction);
@@ -49,6 +53,10 @@ describe('createHotel', () => {
       hotelId: 2,
       slug: 'test-hotel',
       title: 'Test Hotel',
+      rooms: [
+        expect.objectContaining({ roomSlug: 'deluxe-room', hotelSlug: 'test-hotel' }),
+        expect.objectContaining({ roomSlug: 'suite', hotelSlug: 'test-hotel' })
+      ]
     }));
     expect(writeDb).toHaveBeenCalled();
   });
@@ -56,15 +64,20 @@ describe('createHotel', () => {
   it('should return 400 if required fields are missing', async () => {
     mockRequest.body = {
       title: 'Test Hotel',
-      // Missing other required fields
+      description: 'A test hotel',
+      amenities: ['WiFi', 'Pool'],
+      host: 'Test Host',
+      location: 'Test Location',
+      address: 'Test Address',
+      rooms: [
+        { roomTitle: 'Deluxe Room', bedroomCount: 1 },
+        { roomTitle: 'Suite', bedroomCount: 2 }
+      ],
     };
 
     await createHotel(mockRequest as Request, mockResponse as Response, nextFunction);
 
     expect(mockResponse.status).toHaveBeenCalledWith(400);
-    expect(mockResponse.json).toHaveBeenCalledWith({
-      error: 'Title, description, and other fields are required'
-    });
   });
 
   it('should generate a unique slug', async () => {
@@ -84,13 +97,15 @@ describe('createHotel', () => {
       host: 'Test Host',
       location: 'Test Location',
       address: 'Test Address',
-      rooms: ['Room 1'],
+      images: ["/uploads/image.png"],
+      rooms: [{ roomTitle: 'Standard Room', bedroomCount: 1 }],
     };
 
     await createHotel(mockRequest as Request, mockResponse as Response, nextFunction);
 
     expect(mockResponse.json).toHaveBeenCalledWith(expect.objectContaining({
       slug: 'test-hotel',
+      rooms: [expect.objectContaining({ roomSlug: 'standard-room', hotelSlug: 'test-hotel' })]
     }));
   });
 
@@ -112,13 +127,15 @@ describe('createHotel', () => {
       host: 'Test Host',
       location: 'Test Location',
       address: 'Test Address',
-      rooms: ['Room 1'],
+      images: ["/uploads/image.png"],
+      rooms: [{ roomTitle: 'Economy Room', bedroomCount: 1 }],
     };
 
     await createHotel(mockRequest as Request, mockResponse as Response, nextFunction);
 
     expect(mockResponse.json).toHaveBeenCalledWith(expect.objectContaining({
       hotelId: 3,
+      rooms: [expect.objectContaining({ roomSlug: 'economy-room', hotelSlug: 'test-hotel' })]
     }));
   });
 
@@ -136,7 +153,7 @@ describe('createHotel', () => {
       host: 'Test Host',
       location: 'Test Location',
       address: 'Test Address',
-      rooms: ['Room 1'],
+      rooms: [{ roomTitle: 'Standard Room', bedroomCount: 1 }],
     };
 
     await createHotel(mockRequest as Request, mockResponse as Response, nextFunction);
