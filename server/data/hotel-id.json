@@ -38,18 +38,14 @@
         "roomSlug": "room-1",
         "roomImage": "https://example.com/images/room1.jpg",
         "roomTitle": "Ocean View Suite",
-        "bedroomCount": 1,
-        "createdAt": "2024-01-01T10:00:00Z",
-        "updatedAt": "2024-01-01T10:00:00Z"
+        "bedroomCount": 1
       },
       {
         "hotelSlug": "hotel-one",
         "roomSlug": "room-2",
         "roomImage": "https://example.com/images/room2.jpg",
         "roomTitle": "Deluxe King Room",
-        "bedroomCount": 1,
-        "createdAt": "2024-01-01T10:00:00Z",
-        "updatedAt": "2024-01-01T10:00:00Z"
+        "bedroomCount": 1
       }
     ],
     "createdAt": "2024-01-01T10:00:00Z",
@@ -90,68 +86,54 @@
         "roomSlug": "room-1",
         "roomImage": "https://example.com/images/room3.jpg",
         "roomTitle": "Mountain View Room",
-        "bedroomCount": 1,
-        "createdAt": "2024-01-01T10:00:00Z",
-        "updatedAt": "2024-01-01T10:00:00Z"
+        "bedroomCount": 1
       }
     ],
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "cc9dafd1-c1b8-47a9-9f3d-3b1474991886",
+    "id": "70f40a8e-4430-45c5-8e41-832bcea28dd2",
     "hotelId": 3,
-    "slug": "luxury-beachside-resort-new",
-    "title": "Luxury Beachside Resort New",
-    "description": "A luxury resort with beautiful views of the ocean, offering top-notch amenities and services.",
-    "guestCount": 100,
-    "bedroomCount": 50,
-    "bathroomCount": 50,
+    "slug": "mountain-view-inn",
+    "title": "Mountain View Inn",
+    "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
+    "guestCount": 50,
+    "bedroomCount": 25,
+    "bathroomCount": 25,
     "amenities": [
-      "Free Wi-Fi",
-      "Swimming Pool",
-      "Gym",
-      "Spa",
+      "Free Parking",
       "Restaurant",
       "Bar",
-      "Room Service"
+      "Pet Friendly"
     ],
     "host": {
-      "name": "John Doe",
-      "email": "john.doe@example.com",
-      "phone": "+1234567890"
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321"
     },
-    "address": "123 Ocean Drive, Malibu, California",
+    "address": "456 Mountain Road, Aspen, Colorado",
     "location": {
-      "latitude": 34.0259,
-      "longitude": -118.7798
+      "latitude": 39.1911,
+      "longitude": -106.8175
     },
-    "images": [
-      "https://example.com/images/hotel1-1.jpg",
-      "https://example.com/images/hotel1-2.jpg",
-      "https://example.com/images/hotel1-3.jpg"
-    ],
     "rooms": [
       {
-        "hotelSlug": "hotel-one",
+        "hotelSlug": "hotel-two",
         "roomSlug": "room-1",
-        "roomImage": "https://example.com/images/room1.jpg",
-        "roomTitle": "Ocean View Suite",
-        "bedroomCount": 1,
-        "createdAt": "2024-01-01T10:00:00Z",
-        "updatedAt": "2024-01-01T10:00:00Z"
-      },
-      {
-        "hotelSlug": "hotel-one",
-        "roomSlug": "room-2",
-        "roomImage": "https://example.com/images/room2.jpg",
-        "roomTitle": "Deluxe King Room",
-        "bedroomCount": 1,
-        "createdAt": "2024-01-01T10:00:00Z",
-        "updatedAt": "2024-01-01T10:00:00Z"
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "Mountain View Room",
+        "bedroomCount": 1
       }
     ],
-    "createdAt": "2024-11-11T12:39:09.294Z",
-    "updatedAt": "2024-11-12T04:59:51.456Z"
+    "images": [
+      "/uploads/1731393559291-254534402.png",
+      "/uploads/1731393559292-939802873.png",
+      "/uploads/1731393559293-806071818.png",
+      "/uploads/1731393559295-955780600.png",
+      "/uploads/1731393559296-471706540.png"
+    ],
+    "createdAt": "2024-11-12T05:13:55.381Z",
+    "updatedAt": "2024-11-12T06:39:19.305Z"
   }
 ]

@@ -11,5 +11,4 @@
 -env file 
     -PORT=3000
     -NODE_ENV=development
-    -DB_PATH=./data/hotels.json
-    -UPLOAD_PATH=./uploads
+    -DB_PATH=./data/hotel-id.json
