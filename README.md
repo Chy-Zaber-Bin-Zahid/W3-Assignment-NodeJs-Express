@@ -4,6 +4,7 @@
 
 - `git clone https://github.com/Chy-Zaber-Bin-Zahid/W3-Assignment-NodeJs-Express.git`
 - `cd server`
+- `mkdir uploads`
 - `npm init -y`
 - `npm install express cors dotenv`
 - `npm install -D typescript @types/express @types/node @types/cors ts-node nodemon`
@@ -16,7 +17,6 @@
 Create an `.env` file in the `server` directory and add the following variables:
 
 - `PORT=3000`
-- `NODE_ENV=development`
 - `DB_PATH=./data/hotel-id.json`
 
 ## API Endpoints
@@ -32,7 +32,7 @@ Create an `.env` file in the `server` directory and add the following variables:
 Example Request Body:
 ```json
 {
-  "title": "Luxury Beachside Resort",
+  "title": "Luxury Beach Side Resort",
   "description": "A resort with beautiful views of the ocean",
   "guestCount": 100,
   "bedroomCount": 50,
@@ -59,3 +59,4 @@ Example Request Body:
     }
   ]
 }
+```
