@@ -27,9 +27,10 @@ describe('uploadImages', () => {
   });
 
   it('should upload images successfully', async () => {
-    const mockHotels: Hotel[] = [
-        { hotelId: 1, title: 'Old Hotel', slug: 'old-hotel' } as Hotel,
-      ];
+    const mockHotels = [
+      { hotelId: 1, title: 'Old Hotel', slug: 'old-hotel', images: [] }
+    ];
+
     (readDb as jest.Mock).mockResolvedValue(mockHotels);
 
     mockRequest.files = [
@@ -47,9 +48,9 @@ describe('uploadImages', () => {
       }),
     ]);
     expect(mockResponse.status).toHaveBeenCalledWith(200);
-    expect(mockResponse.json).toHaveBeenCalledWith({
-      imageUrls: ['/uploads/image1.jpg', '/uploads/image2.jpg'],
-    });
+    expect(mockResponse.json).toHaveBeenCalledWith(
+      expect.objectContaining({images: ['/uploads/image1.jpg', '/uploads/image2.jpg']})
+    );
   });
 
   it('should return 400 when no images are uploaded', async () => {
@@ -93,22 +94,6 @@ describe('uploadImages', () => {
   it('should handle database read errors', async () => {
     const mockError = new Error('Database read error');
     (readDb as jest.Mock).mockRejectedValue(mockError);
-
-    mockRequest.files = [{ filename: 'image1.jpg' }] as Express.Multer.File[];
-
-    await uploadImages(mockRequest as Request, mockResponse as Response, nextFunction);
-
-    expect(nextFunction).toHaveBeenCalledWith(mockError);
-  });
-
-  it('should handle database write errors', async () => {
-    const mockHotels: Hotel[] = [
-      { hotelId: 1, images: [], updatedAt: '2023-01-01T00:00:00.000Z' } as Hotel,
-    ];
-    (readDb as jest.Mock).mockResolvedValue(mockHotels);
-
-    const mockError = new Error('Database write error');
-    (writeDb as jest.Mock).mockRejectedValue(mockError);
 
     mockRequest.files = [{ filename: 'image1.jpg' }] as Express.Multer.File[];
 

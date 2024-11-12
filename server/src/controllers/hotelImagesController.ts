@@ -29,7 +29,7 @@ export const uploadImages = async (
     
     await writeDb(hotels);
     
-    res.status(200).json({ imageUrls });
+    res.status(200).json(hotels[hotelIndex]);
   } catch (error) {
     next(error);
   }
