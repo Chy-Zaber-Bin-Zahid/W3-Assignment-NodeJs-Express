@@ -93,9 +93,19 @@
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "70f40a8e-4430-45c5-8e41-832bcea28dd2",
+    "id": "b03c75c8-2325-46d1-91f1-7a6994b23427",
     "hotelId": 3,
     "slug": "mountain-view-inn",
+    "rooms": [
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "Mountain View Room",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "roomSlug": "mountain-view-room"
+      }
+    ],
     "title": "Mountain View Inn",
     "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
     "guestCount": 50,
@@ -117,23 +127,104 @@
       "latitude": 39.1911,
       "longitude": -106.8175
     },
+    "images": [],
+    "createdAt": "2024-11-12T07:40:29.532Z",
+    "updatedAt": "2024-11-12T07:40:29.533Z"
+  },
+  {
+    "id": "0f891234-6627-4099-b314-80a6c8fab664",
+    "hotelId": 4,
+    "slug": "mountain-view-inn",
     "rooms": [
       {
-        "hotelSlug": "hotel-two",
-        "roomSlug": "room-1",
         "roomImage": "https://example.com/images/room3.jpg",
         "roomTitle": "Mountain View Room",
-        "bedroomCount": 1
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "roomSlug": "mountain-view-room"
+      },
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "New Hotel",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "roomSlug": "new-hotel"
       }
     ],
-    "images": [
-      "/uploads/1731393559291-254534402.png",
-      "/uploads/1731393559292-939802873.png",
-      "/uploads/1731393559293-806071818.png",
-      "/uploads/1731393559295-955780600.png",
-      "/uploads/1731393559296-471706540.png"
+    "title": "Mountain View Inn",
+    "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
+    "guestCount": 50,
+    "bedroomCount": 25,
+    "bathroomCount": 25,
+    "amenities": [
+      "Free Parking",
+      "Restaurant",
+      "Bar",
+      "Pet Friendly"
     ],
-    "createdAt": "2024-11-12T05:13:55.381Z",
-    "updatedAt": "2024-11-12T06:39:19.305Z"
+    "host": {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321"
+    },
+    "address": "456 Mountain Road, Aspen, Colorado",
+    "location": {
+      "latitude": 39.1911,
+      "longitude": -106.8175
+    },
+    "images": [],
+    "createdAt": "2024-11-12T07:41:02.022Z",
+    "updatedAt": "2024-11-12T07:41:02.022Z"
+  },
+  {
+    "id": "bfeaa529-3f1a-4a0f-afe9-b0f531677450",
+    "hotelId": 5,
+    "slug": "mountain-view-inn",
+    "rooms": [
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "Mountain View Room",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "hotelSlug": "mountain-view-inn",
+        "roomSlug": "mountain-view-room"
+      },
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "New Hotel",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "hotelSlug": "mountain-view-inn",
+        "roomSlug": "new-hotel"
+      }
+    ],
+    "title": "Mountain View Inn",
+    "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
+    "guestCount": 50,
+    "bedroomCount": 25,
+    "bathroomCount": 25,
+    "amenities": [
+      "Free Parking",
+      "Restaurant",
+      "Bar",
+      "Pet Friendly"
+    ],
+    "host": {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321"
+    },
+    "address": "456 Mountain Road, Aspen, Colorado",
+    "location": {
+      "latitude": 39.1911,
+      "longitude": -106.8175
+    },
+    "images": [],
+    "createdAt": "2024-11-12T07:50:39.299Z",
+    "updatedAt": "2024-11-12T07:50:39.300Z"
   }
 ]

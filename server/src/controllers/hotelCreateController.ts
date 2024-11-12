@@ -12,6 +12,11 @@ export const createHotel = async (
     try {
       const hotels = await readDb();
       const slug = slugify(req.body.title, { lower: true, strict: true });
+      const roomsWithSlugs = req.body.rooms.map(room => ({
+        ...room,
+        hotelSlug: slugify(req.body.title, { lower: true, strict: true }),
+        roomSlug: slugify(room.roomTitle, { lower: true, strict: true })
+      }));
       
       // Validate required fields
       if (!req.body.title || !req.body.description || !req.body.amenities || !req.body.bathroomCount || !req.body.bedroomCount || !req.body.guestCount || !req.body.host || !req.body.location || !req.body.address || !req.body.rooms) {
@@ -27,12 +32,15 @@ export const createHotel = async (
       while (hotelIds.includes(nextHotelId)) {
         nextHotelId++;
       }
+
+      const {rooms, ...newHotelData} = req.body
   
       const newHotel: Hotel = {
         id: uuidv4(),
         hotelId: nextHotelId,
         slug,
-        ...req.body,
+        rooms: roomsWithSlugs,
+        ...newHotelData,
         images: [],
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
