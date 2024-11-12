@@ -2,7 +2,7 @@
   {
     "id": "1",
     "hotelId": 1,
-    "slug": "hotel-one",
+    "slug": "luxury-beachside-resort",
     "title": "Luxury Beachside Resort",
     "description": "A luxury resort with beautiful views of the ocean, offering top-notch amenities and services.",
     "images": [
@@ -38,22 +38,18 @@
         "roomSlug": "room-1",
         "roomImage": "https://example.com/images/room1.jpg",
         "roomTitle": "Ocean View Suite",
-        "bedroomCount": 1,
-        "createdAt": "2024-01-01T10:00:00Z",
-        "updatedAt": "2024-01-01T10:00:00Z"
+        "bedroomCount": 1
       },
       {
         "hotelSlug": "hotel-one",
         "roomSlug": "room-2",
         "roomImage": "https://example.com/images/room2.jpg",
         "roomTitle": "Deluxe King Room",
-        "bedroomCount": 1,
-        "createdAt": "2024-01-01T10:00:00Z",
-        "updatedAt": "2024-01-01T10:00:00Z"
+        "bedroomCount": 1
       }
     ],
     "createdAt": "2024-01-01T10:00:00Z",
-    "updatedAt": "2024-01-01T10:00:00Z"
+    "updatedAt": "2024-11-12T03:52:32.229Z"
   },
   {
     "id": "2",
@@ -90,18 +86,26 @@
         "roomSlug": "room-1",
         "roomImage": "https://example.com/images/room3.jpg",
         "roomTitle": "Mountain View Room",
-        "bedroomCount": 1,
-        "createdAt": "2024-01-01T10:00:00Z",
-        "updatedAt": "2024-01-01T10:00:00Z"
+        "bedroomCount": 1
       }
     ],
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "cc9dafd1-c1b8-47a9-9f3d-3b1474991886",
+    "id": "b03c75c8-2325-46d1-91f1-7a6994b23427",
     "hotelId": 3,
     "slug": "mountain-view-inn",
+    "rooms": [
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "Mountain View Room",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "roomSlug": "mountain-view-room"
+      }
+    ],
     "title": "Mountain View Inn",
     "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
     "guestCount": 50,
@@ -124,8 +128,103 @@
       "longitude": -106.8175
     },
     "images": [],
-    "rooms": [],
-    "createdAt": "2024-11-11T12:39:09.294Z",
-    "updatedAt": "2024-11-11T12:39:09.294Z"
+    "createdAt": "2024-11-12T07:40:29.532Z",
+    "updatedAt": "2024-11-12T07:40:29.533Z"
+  },
+  {
+    "id": "0f891234-6627-4099-b314-80a6c8fab664",
+    "hotelId": 4,
+    "slug": "mountain-view-inn",
+    "rooms": [
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "Mountain View Room",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "roomSlug": "mountain-view-room"
+      },
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "New Hotel",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "roomSlug": "new-hotel"
+      }
+    ],
+    "title": "Mountain View Inn",
+    "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
+    "guestCount": 50,
+    "bedroomCount": 25,
+    "bathroomCount": 25,
+    "amenities": [
+      "Free Parking",
+      "Restaurant",
+      "Bar",
+      "Pet Friendly"
+    ],
+    "host": {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321"
+    },
+    "address": "456 Mountain Road, Aspen, Colorado",
+    "location": {
+      "latitude": 39.1911,
+      "longitude": -106.8175
+    },
+    "images": [],
+    "createdAt": "2024-11-12T07:41:02.022Z",
+    "updatedAt": "2024-11-12T07:41:02.022Z"
+  },
+  {
+    "id": "bfeaa529-3f1a-4a0f-afe9-b0f531677450",
+    "hotelId": 5,
+    "slug": "mountain-view-inn",
+    "rooms": [
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "Mountain View Room",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "hotelSlug": "mountain-view-inn",
+        "roomSlug": "mountain-view-room"
+      },
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "New Hotel",
+        "bedroomCount": 1,
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-01-01T10:00:00Z",
+        "hotelSlug": "mountain-view-inn",
+        "roomSlug": "new-hotel"
+      }
+    ],
+    "title": "Mountain View Inn",
+    "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
+    "guestCount": 50,
+    "bedroomCount": 25,
+    "bathroomCount": 25,
+    "amenities": [
+      "Free Parking",
+      "Restaurant",
+      "Bar",
+      "Pet Friendly"
+    ],
+    "host": {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321"
+    },
+    "address": "456 Mountain Road, Aspen, Colorado",
+    "location": {
+      "latitude": 39.1911,
+      "longitude": -106.8175
+    },
+    "images": [],
+    "createdAt": "2024-11-12T07:50:39.299Z",
+    "updatedAt": "2024-11-12T07:50:39.300Z"
   }
 ]

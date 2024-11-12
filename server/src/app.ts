@@ -30,6 +30,6 @@ app.get('/', (req, res) => {
 
 app.use('/api', hotelRoutes);
 
-app.use(errorHandler);
+app.use(errorHandler as express.ErrorRequestHandler);
 
 export default app;
