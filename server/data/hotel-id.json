@@ -2,7 +2,7 @@
   {
     "id": "1",
     "hotelId": 1,
-    "slug": "hotel-one",
+    "slug": "luxury-beachside-resort",
     "title": "Luxury Beachside Resort",
     "description": "A luxury resort with beautiful views of the ocean, offering top-notch amenities and services.",
     "images": [
@@ -53,7 +53,7 @@
       }
     ],
     "createdAt": "2024-01-01T10:00:00Z",
-    "updatedAt": "2024-01-01T10:00:00Z"
+    "updatedAt": "2024-11-12T03:52:32.229Z"
   },
   {
     "id": "2",
@@ -126,6 +126,6 @@
     "images": [],
     "rooms": [],
     "createdAt": "2024-11-11T12:39:09.294Z",
-    "updatedAt": "2024-11-11T12:39:09.294Z"
+    "updatedAt": "2024-11-12T03:40:29.494Z"
   }
 ]

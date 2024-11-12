@@ -14,6 +14,6 @@ type RouteHandler = (
 router.post('/hotel', createHotel as RouteHandler);
 router.get('/hotel/:id', getHotel as RouteHandler);
 router.put('/hotel/:id', updateHotel as RouteHandler);
-router.post('/images/:hotelId', upload.array('images', 5), uploadImages as RouteHandler);
+router.post('/images', upload.array('images', 5), uploadImages as RouteHandler);
 
 export const hotelRoutes = router;

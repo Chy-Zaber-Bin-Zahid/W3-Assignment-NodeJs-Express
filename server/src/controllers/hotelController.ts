@@ -83,7 +83,33 @@ export const updateHotel = async (
   try {
     const { id } = req.params;
     const updateData = req.body;
-    
+
+    // Define allowed fields for updating
+    const allowedFields = [
+      "slug",
+      "title",
+      "description",
+      "images",
+      "guestCount",
+      "bedroomCount",
+      "bathroomCount",
+      "amenities",
+      "host",
+      "address",
+      "location",
+      "rooms"
+    ];
+    const invalidFields = Object.keys(updateData).filter(key => !allowedFields.includes(key));
+
+    // If there are invalid fields, return an error
+    if (invalidFields.length > 0) {
+      res.status(400).json({
+        error: 'Unwanted data in request',
+        invalidFields,
+      });
+      return;
+    }
+
     const hotels = await readDb();
     const hotelIndex = hotels.findIndex(h => h.hotelId === Number(id));
     
@@ -112,121 +138,7 @@ export const updateHotel = async (
   }
 };
 
-// export const updateHotel = async (
-//   req: Request<{ id: string }, {}, UpdateHotelDto>,
-//   res: Response,
-//   next: NextFunction
-// ): Promise<void> => {
-//   try {
-//     const { id } = req.params;
-//     const updateData = req.body;
-    
-//     // Define allowed fields based on schema
-//     const allowedFields = new Set([
-//       'title',
-//       'description',
-//       'guestCount',
-//       'bedroomCount',
-//       'bathroomCount',
-//       'amenities',
-//       'hostInformation',
-//       'location',
-//       'rooms'
-//     ]);
-
-//     // Check for invalid fields
-//     const invalidFields = Object.keys(updateData).filter(key => !allowedFields.has(key));
-//     if (invalidFields.length > 0) {
-//       res.status(400).json({ 
-//         error: 'Invalid fields detected', 
-//         invalidFields,
-//         message: 'Only the following fields are allowed: ' + Array.from(allowedFields).join(', ')
-//       });
-//       return;
-//     }
-
-//     // Validate nested objects if present
-//     if (updateData.hostInformation) {
-//       const allowedHostFields = new Set(['name', 'email', 'phone']);
-//       const invalidHostFields = Object.keys(updateData.hostInformation)
-//         .filter(key => !allowedHostFields.has(key));
-      
-//       if (invalidHostFields.length > 0) {
-//         res.status(400).json({
-//           error: 'Invalid host information fields',
-//           invalidFields: invalidHostFields,
-//           message: 'Only the following host fields are allowed: ' + Array.from(allowedHostFields).join(', ')
-//         });
-//         return;
-//       }
-//     }
-
-//     if (updateData.location) {
-//       const allowedLocationFields = new Set(['address', 'latitude', 'longitude']);
-//       const invalidLocationFields = Object.keys(updateData.location)
-//         .filter(key => !allowedLocationFields.has(key));
-      
-//       if (invalidLocationFields.length > 0) {
-//         res.status(400).json({
-//           error: 'Invalid location fields',
-//           invalidFields: invalidLocationFields,
-//           message: 'Only the following location fields are allowed: ' + Array.from(allowedLocationFields).join(', ')
-//         });
-//         return;
-//       }
-//     }
-
-//     if (updateData.rooms) {
-//       const allowedRoomFields = new Set([
-//         'hotelSlug',
-//         'roomSlug',
-//         'roomImage',
-//         'roomTitle',
-//         'bedroomCount'
-//       ]);
-
-//       const invalidRoomFields = updateData.rooms.flatMap(room => 
-//         Object.keys(room).filter(key => !allowedRoomFields.has(key))
-//       );
-
-//       if (invalidRoomFields.length > 0) {
-//         res.status(400).json({
-//           error: 'Invalid room fields',
-//           invalidFields: invalidRoomFields,
-//           message: 'Only the following room fields are allowed: ' + Array.from(allowedRoomFields).join(', ')
-//         });
-//         return;
-//       }
-//     }
-
-//     const hotels = await readDb();
-//     const hotelIndex = hotels.findIndex(h => h.hotelId === Number(id));
-    
-//     if (hotelIndex === -1) {
-//       res.status(404).json({ error: 'Hotel not found' });
-//       return;
-//     }
-
-//     // Update slug if title is being updated
-//     const slug = updateData.title 
-//       ? slugify(updateData.title, { lower: true, strict: true })
-//       : hotels[hotelIndex].slug;
-    
-//     hotels[hotelIndex] = {
-//       ...hotels[hotelIndex],
-//       ...updateData,
-//       slug,
-//       updatedAt: new Date().toISOString(),
-//     };
-    
-//     await writeDb(hotels);
-    
-//     res.json(hotels[hotelIndex]);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-
+// Upload Images
 export const uploadImages = async (
   req: Request<{ hotelId: string }>,
   res: Response,
