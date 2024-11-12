@@ -2,6 +2,7 @@
 
 ## Setup
 
+- `git clone https://github.com/Chy-Zaber-Bin-Zahid/W3-Assignment-NodeJs-Express.git`
 - `cd server`
 - `npm init -y`
 - `npm install express cors dotenv`
@@ -25,7 +26,7 @@ Create an `.env` file in the `server` directory and add the following variables:
 **Endpoint:** `POST /hotel`
 
 - **Description:** Creates a new hotel entry in the database.
-- **Request Body:** JSON containing `title`, `description`, `guestCount`, `bedroomCount`, `bathroomCount`, `amenities`, `host`, `address`, `location`, and `rooms`.
+- **Request Body:** JSON containing `title`, `description`, `guestCount`, `bedroomCount`, `bathroomCount`, `amenities`, `host`, `address`, `location`, `images`, and `rooms`.
 - **Response:** JSON object of the newly created hotel.
 
 Example Request Body:
@@ -44,8 +45,12 @@ Example Request Body:
   "address": "123 Ocean Drive, Malibu, California",
   "location": {
     "latitude": 34.0259,
-    "longitude": -118.7798
+    "longitude": -118.7798,
   },
+  "images": [
+    "/uploads/example.png",
+    "/uploads/example.jpg",
+  ],
   "rooms": [
     {
       "roomSlug": "ocean-view-suite",
