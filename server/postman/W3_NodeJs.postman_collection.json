@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "53a371af-5704-4d2e-9ec1-115e4e2511af",
+		"name": "W3 NodeJs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26636758"
+	},
+	"item": [
+		{
+			"name": "Get Hotel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/hotel/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"hotel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Hotel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Mountain View Inn\",\n    \"description\": \"A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.\",\n    \"guestCount\": 50,\n    \"bedroomCount\": 25,\n    \"bathroomCount\": 25,\n    \"images\": [],\n    \"amenities\": [\n      \"Free Parking\",\n      \"Restaurant\",\n      \"Bar\",\n      \"Pet Friendly\"\n    ],\n    \"host\": {\n      \"name\": \"Jane Smith\",\n      \"email\": \"jane.smith@example.com\",\n      \"phone\": \"+0987654321\"\n    },\n    \"address\": \"456 Mountain Road, Aspen, Colorado\",\n    \"location\": {\n      \"latitude\": 39.1911,\n      \"longitude\": -106.8175\n    },\n    \"rooms\": [\n      {\n        \"roomImage\": \"https://example.com/images/room3.jpg\",\n        \"roomTitle\": \"Mountain View Room\",\n        \"bedroomCount\": 1\n      },\n            {\n        \"roomImage\": \"https://example.com/images/room3.jpg\",\n        \"roomTitle\": \"New Hotel\",\n        \"bedroomCount\": 1\n      }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/hotel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"hotel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Hotel",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Mountain View Inn Updated Title\",\n    \"description\": \"A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.\",\n    \"guestCount\": 50,\n    \"bedroomCount\": 25,\n    \"bathroomCount\": 25,\n    \"images\": [],\n    \"amenities\": [\n      \"Free Parking\",\n      \"Restaurant\",\n      \"Bar\",\n      \"Pet Friendly\"\n    ],\n    \"host\": {\n      \"name\": \"Jane Smith\",\n      \"email\": \"jane.smith@example.com\",\n      \"phone\": \"+0987654321\"\n    },\n    \"address\": \"456 Mountain Road, Aspen, Colorado\",\n    \"location\": {\n      \"latitude\": 39.1911,\n      \"longitude\": -106.8175\n    },\n    \"rooms\": [\n      {\n        \"roomImage\": \"https://example.com/images/room3.jpg\",\n        \"roomTitle\": \"Mountain View Room\",\n        \"bedroomCount\": 1\n      },\n            {\n        \"roomImage\": \"https://example.com/images/room3.jpg\",\n        \"roomTitle\": \"New Hotel\",\n        \"bedroomCount\": 1\n      }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/hotel/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"hotel",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Images",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "hotelId",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/images",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"images"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

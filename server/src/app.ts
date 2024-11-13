@@ -19,9 +19,9 @@ app.get('/', (req, res) => {
       endpoints: {
         hotels: {
           create: 'POST /api/hotel',
-          get: 'GET /api/hotel/:hotelId',
-          update: 'PUT /api/hotel/:hotelId',
-          uploadImages: 'POST /api/images/:hotelId'
+          get: 'GET /api/hotel/:id',
+          update: 'PUT /api/hotel/:id',
+          uploadImages: 'POST /api/images'
         }
       },
       documentation: 'For detailed API documentation, please refer to README.md'
