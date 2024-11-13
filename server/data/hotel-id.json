@@ -1,0 +1,123 @@
+[
+  {
+    "id": "8166c1a8-1345-4ee3-9b7f-8769c4a976b3",
+    "hotelId": 1,
+    "slug": "mountain-view-inn",
+    "title": "Mountain View Inn",
+    "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
+    "images": [],
+    "guestCount": 50,
+    "bedroomCount": 25,
+    "bathroomCount": 25,
+    "amenities": [
+      "Free Parking",
+      "Restaurant",
+      "Bar",
+      "Pet Friendly"
+    ],
+    "host": {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321"
+    },
+    "address": "456 Mountain Road, Aspen, Colorado",
+    "location": {
+      "latitude": 39.1911,
+      "longitude": -106.8175
+    },
+    "rooms": [
+      {
+        "hotelSlug": "mountain-view-inn",
+        "roomSlug": "mountain-view-room",
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "Mountain View Room",
+        "bedroomCount": 1
+      }
+    ],
+    "createdAt": "2024-11-12T12:05:57.151Z",
+    "updatedAt": "2024-11-12T12:30:37.717Z"
+  },
+  {
+    "id": "2",
+    "hotelId": 2,
+    "slug": "hotel-two",
+    "title": "Mountain View Inn",
+    "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
+    "images": [],
+    "guestCount": 50,
+    "bedroomCount": 25,
+    "bathroomCount": 25,
+    "amenities": [
+      "Free Parking",
+      "Restaurant",
+      "Bar",
+      "Pet Friendly"
+    ],
+    "host": {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321"
+    },
+    "address": "456 Mountain Road, Aspen, Colorado",
+    "location": {
+      "latitude": 39.1911,
+      "longitude": -106.8175
+    },
+    "rooms": [
+      {
+        "hotelSlug": "hotel-two",
+        "roomSlug": "room-1",
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "Mountain View Room",
+        "bedroomCount": 1
+      }
+    ],
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-11-12T12:29:41.902Z"
+  },
+  {
+    "id": "c0ca77ab-2615-4406-9769-92c469042863",
+    "hotelId": 3,
+    "slug": "mountain-view-inn-updated-title",
+    "title": "Mountain View Inn Updated Title",
+    "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
+    "images": [],
+    "guestCount": 50,
+    "bedroomCount": 25,
+    "bathroomCount": 25,
+    "amenities": [
+      "Free Parking",
+      "Restaurant",
+      "Bar",
+      "Pet Friendly"
+    ],
+    "host": {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321"
+    },
+    "address": "456 Mountain Road, Aspen, Colorado",
+    "location": {
+      "latitude": 39.1911,
+      "longitude": -106.8175
+    },
+    "rooms": [
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "Mountain View Room",
+        "bedroomCount": 1,
+        "hotelSlug": "mountain-view-inn-updated-title",
+        "roomSlug": "mountain-view-room"
+      },
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "New Hotel",
+        "bedroomCount": 1,
+        "hotelSlug": "mountain-view-inn-updated-title",
+        "roomSlug": "new-hotel"
+      }
+    ],
+    "createdAt": "2024-11-12T12:47:55.418Z",
+    "updatedAt": "2024-11-13T04:36:40.745Z"
+  }
+]
