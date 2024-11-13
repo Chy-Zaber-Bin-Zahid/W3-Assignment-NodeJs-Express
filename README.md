@@ -3,7 +3,7 @@
 ## Setup
 
 - `git clone https://github.com/Chy-Zaber-Bin-Zahid/W3-Assignment-NodeJs-Express.git`
-- `cd server`
+- `cd W3-Assignment-NodeJs-Express/server`
 - `mkdir uploads`
 - `npm init -y`
 - `npm install express cors dotenv`
