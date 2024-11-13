@@ -78,8 +78,8 @@
   {
     "id": "c0ca77ab-2615-4406-9769-92c469042863",
     "hotelId": 3,
-    "slug": "mountain-view-inn",
-    "title": "Mountain View Inn",
+    "slug": "mountain-view-inn-updated-title",
+    "title": "Mountain View Inn Updated Title",
     "description": "A cozy inn nestled in the mountains, perfect for those seeking tranquility and adventure.",
     "images": [],
     "guestCount": 50,
@@ -103,14 +103,21 @@
     },
     "rooms": [
       {
-        "hotelSlug": "mountain-view-inn",
-        "roomSlug": "mountain-view-room",
         "roomImage": "https://example.com/images/room3.jpg",
         "roomTitle": "Mountain View Room",
-        "bedroomCount": 1
+        "bedroomCount": 1,
+        "hotelSlug": "mountain-view-inn-updated-title",
+        "roomSlug": "mountain-view-room"
+      },
+      {
+        "roomImage": "https://example.com/images/room3.jpg",
+        "roomTitle": "New Hotel",
+        "bedroomCount": 1,
+        "hotelSlug": "mountain-view-inn-updated-title",
+        "roomSlug": "new-hotel"
       }
     ],
     "createdAt": "2024-11-12T12:47:55.418Z",
-    "updatedAt": "2024-11-12T15:59:14.584Z"
+    "updatedAt": "2024-11-13T04:36:40.745Z"
   }
 ]
