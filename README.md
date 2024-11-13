@@ -137,7 +137,7 @@ To help you get started quickly, I have provided a Postman collection that inclu
 
 ### Importing the Collection
 
-1. Download our Postman Collection: [Hotel API Collection.json](.server/postman/W3_NodeJs.postman_collection.json)
+1. Download our Postman Collection: [Hotel API Collection.json](/server/postman/W3_NodeJs.postman_collection.json)
 
 2. Open Postman and click on "Import" in the top left corner
 
